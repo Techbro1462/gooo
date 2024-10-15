@@ -55,14 +55,14 @@ func main() {
 		fmt.Fprint(w, "Welcome!\n")
 	})
 
-	l, err := net.Listen("tcp", "localhost:"+myport)
+	l, err := net.Listen("tcp", "0.0.0.0:"+myport)
 	if err != nil {
 		log.Fatal(err)
 	}
 	// The browser can connect now because the listening socket is open.
 
 	//err = open.Start("http://localhost:"+ myport + "/test")
-	err = open.Start("http://localhost:" + myport + "/ip")
+	err = open.Start("http://0.0.0.0:" + myport + "/ip")
 	if err != nil {
 		log.Println(err)
 	}
