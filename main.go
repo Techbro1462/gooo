@@ -27,7 +27,7 @@ func getIP(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
 	// and takes precedence over RemoteAddr
 	// Header.Get is case-insensitive
 	forward := req.Header.Get("X-Forwarded-For")
-
+	fmt.Println(forward)
 	fmt.Fprintf(w, "<p>IP: %s</p>", ip)
 	fmt.Fprintf(w, "<p>Port: %s</p>", port)
 	fmt.Fprintf(w, "<p>Forwarded for: %s</p>", forward)
